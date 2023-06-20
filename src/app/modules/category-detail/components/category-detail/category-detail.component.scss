@@ -1,0 +1,13 @@
+@import 'src/assets/scss/variables.scss';
+
+#marketplace-card {
+  background-color: $scdy-white-c;
+}
+
+.container-card {
+  display: flex;
+  justify-content: space-evenly;
+  height: 100%;
+  flex-wrap: wrap;
+  align-items: center;
+}

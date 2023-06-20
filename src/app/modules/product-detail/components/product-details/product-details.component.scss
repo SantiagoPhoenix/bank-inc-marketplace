@@ -1,0 +1,87 @@
+@import 'src/assets/scss/variables.scss';
+
+.hero {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  background-color: #00010D;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.hero-content {
+  margin-bottom: 20px;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.hero-description {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.hero-price {
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #d7dae0;
+}
+
+.hero-image {
+  position: relative;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 900px;
+  border-radius: 2rem;
+  box-shadow: 0 8px 16px #2F4C73;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.hero-button-primary {
+  background-color: #3b6cab;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-right: 10px;
+  text-decoration: none;
+}
+
+.hero-button-primary:hover {
+  background-color: #2b63ab;
+  color: black;
+}
+
+@media (min-width: 768px) {
+  .hero {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .hero-content {
+    flex: 1;
+    margin-right: 100px;
+    margin-left: 4rem;
+    text-align: left;
+  }
+
+  .hero-image {
+    flex: 1;
+    margin-right: 6rem;
+  }
+}

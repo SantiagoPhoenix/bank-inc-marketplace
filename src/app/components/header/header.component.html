@@ -1,0 +1,16 @@
+<header>
+  <div class="container">
+    <h1 class="logo ft-l-h-17 cursor-pointer" (click)="goToHome()">{{ WRDS.LOGO }}</h1>
+    <div class="container-sm">
+      <nav>
+        <a class="ft-w-600 f-s-16 ft-l-h-16 ft-c-primary cursor-pointer" (click)="goToHome()">{{ WRDS.MENU_START }}</a>
+      </nav>
+      <div class="cart cursor-pointer" (click)="goToShopDetails()">
+        <a>
+          <img src="{{GBL.CART_IMG}}" alt="Shopping Cart">
+        </a>
+        <span class="cart-text ft-w-400 f-s-16 ft-l-h-16">{{totalProducts}}</span>
+      </div>
+    </div>
+  </div>
+</header>

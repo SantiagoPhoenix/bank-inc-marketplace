@@ -1,0 +1,126 @@
+@import 'src/assets/scss/variables.scss';
+
+#marketplace {
+  background-color: $pmy-white-c;
+  padding: 2rem;
+}
+
+.filter-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.d-flex {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+}
+
+.filter-input {
+  padding: 8px;
+  border: 1px solid $pmy-blue-c;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  width: 40%;
+}
+
+.category-list {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.category-item {
+  margin-right: 10px;
+  margin-bottom: 10px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+}
+
+.category-item img {
+  height: 3em;
+  border-radius: 1rem;
+  margin-right: 5px;
+}
+
+.category-item a {
+  color: $pmy-blue-c-dark;
+  text-decoration: underline;
+  cursor: pointer;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.category-item a:hover {
+  color: $pmy-blue-c-light;
+}
+
+#marketplace-card {
+  background-color: $scdy-white-c;
+}
+
+.container-card {
+  display: flex;
+  justify-content: space-evenly;
+  height: 100%;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.pagination .page-link {
+  padding: 8px 12px;
+  text-decoration: none;
+  color: $pmy-font-c-black;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  margin: .8rem;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.pagination .page-link:hover {
+  background: linear-gradient(0deg, $pmy-blue-c, $pmy-blue-c-light );
+  color:$scdy-white-c;
+}
+
+.pagination .active {
+  font-weight: bold;
+  background: linear-gradient(0deg, $pmy-blue-c, $pmy-blue-c-light );
+  color: #fff;
+  border-color: $pmy-blue-c;
+}
+
+@media (max-width: 767px) {
+  .filter-input {
+    width: 100%;
+  }
+
+  .pagination {
+    flex-wrap: wrap;
+    margin-left: -5px;
+    margin-right: -5px;
+  }
+
+  .pagination .page-link {
+    margin: 5px;
+    flex: 0 0 30px;
+    text-align: center;
+  }
+
+}

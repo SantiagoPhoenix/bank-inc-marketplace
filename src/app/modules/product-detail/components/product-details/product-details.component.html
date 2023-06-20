@@ -1,0 +1,13 @@
+<section class="hero">
+  <div class="hero-content">
+    <h2 class="hero-title">{{ product.title }}</h2>
+    <p class="hero-description">{{ product.description }}</p>
+    <span class="hero-price">${{ product.price }}</span>
+  </div>
+  <div class="hero-image">
+    <img src="{{ product.images[0] }}" alt="Product Img">
+    <div class="hero-buttons">
+      <a (click)="addProduct()" class="hero-button-primary cursor-pointer">{{WRDS.ADD_TO_SHOPPING_CART}}</a>
+    </div>
+  </div>
+</section>

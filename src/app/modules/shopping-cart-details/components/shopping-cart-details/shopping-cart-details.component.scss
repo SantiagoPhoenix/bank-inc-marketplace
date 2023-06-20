@@ -1,0 +1,182 @@
+@import 'src/assets/scss/variables.scss';
+
+#shopping-table {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  height: 100vh;
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url('/assets/imgs/shopping-table/berries.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 6rem;
+  padding-right: 6rem;
+  flex-wrap: wrap;
+  height: auto;
+}
+
+.container h2 {
+  color: $pmy-font-c-white;
+}
+
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+  margin: 1rem;
+  max-height: 400px;
+  border-radius: 2rem;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+  border-radius: 2rem;
+}
+
+.table-container::-webkit-scrollbar-track {
+  background: none;
+}
+
+.table-container::-webkit-scrollbar-thumb {
+  background: none;
+}
+
+.table-container::-webkit-scrollbar-thumb:hover {
+  background: none;
+}
+
+.table th,
+.table td {
+  padding: 2rem;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.table th {
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+.btn-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.table td {
+  background-color: #fff;
+  color: #555;
+}
+
+.table .btn {
+  border: none;
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.table .btn-detail {
+  background-color: $pmy-blue-c-dark;
+  color: #fff;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.btn-empty {
+  width: 15rem;
+  background-color: $pmy-font-c-white;
+  border: 1px solid $pmy-font-c-white;
+  color: $pmy-font-c-black;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.table .btn-delete {
+  background-color: #cc0000;
+  color: #fff;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.table .btn-detail:hover {
+  background-color: $pmy-blue-c-light;
+  color: #fff;
+}
+
+.btn-empty:hover {
+  background-color: $pmy-font-c-gray;
+  border: 1px solid $pmy-font-c-gray;
+  color: #fff;
+}
+
+.table .btn-delete:hover {
+  background-color: red;
+  color: #fff;
+}
+
+@media (max-width: 767px) {
+  .container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .table-container {
+    overflow-x: auto;
+    max-height: unset;
+  }
+
+  .table {
+    width: max-content;
+    white-space: nowrap;
+  }
+
+  .table th,
+  .table td {
+    white-space: nowrap;
+  }
+
+  .table tbody,
+  .table th,
+  .table td,
+  .table tr {
+    display: block;
+  }
+
+  .table td {
+    border-bottom: none;
+    position: relative;
+    padding-left: 2rem;
+  }
+
+  .table td:before {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+    font-weight: bold;
+  }
+
+  .table .btn {
+    display: block;
+    margin-top: 0.5rem;
+  }
+
+  #shopping-table {
+    padding: 2rem;
+  }
+}
+

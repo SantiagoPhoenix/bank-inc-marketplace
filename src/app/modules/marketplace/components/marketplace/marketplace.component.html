@@ -1,0 +1,53 @@
+<section id="marketplace">
+  <div class="container">
+  <div class="filter-container">
+    <ul class="category-list">
+      <ng-container *ngFor="let category of marketPlace.categories">
+        <li class="category-item ft-w-700 f-s-24 ft-l-h-20 cursor-pointer" (click)="goToCateDetails(category.id)">
+          <img src="{{category.image}}" alt="Nombre Producto" class="product-image">
+          <a>
+            {{ category.name }}
+          </a>
+        </li>
+        <div class="vertical-hr"></div>
+      </ng-container>
+    </ul>
+    <form [formGroup]="formFilter" class="d-flex">
+      <input type="text" formControlName="name" pattern="^[a-zA-Z0-9]+$" [attr.maxlength]="50" class="filter-input ft-l-h-20 f-s-18 ft-w-400" placeholder="{{WRDS.PRODUCT_NAME}}">
+    </form>
+  </div>
+  </div>
+</section>
+<section id="marketplace-card">
+  <div class="container-card">
+    <div class="card" *ngFor="let product of marketPlace.products">
+      <div class="left-column bg-left-column">
+        <img src="{{product.images[0]}}" alt="Nombre Producto" class="product-image">
+      </div>
+      <div class="right-column">
+        <div>
+          <h4>{{WRDS.LOGO}}</h4>
+          <h6>{{WRDS.PRODUCT}}</h6>
+        </div>
+        <h2>{{product.title}}</h2>
+        <p class="ft-w-700 f-s-24 ft-l-h-20 cursor-pointer">${{product.price}}</p>
+        <div class="dropdown">
+          <button class="btn bg-left-1-column cursor-pointer">{{ WRDS.OPTIONS }}</button>
+          <div class="dropdown-content">
+            <a (click)="addProduct(product)" class="cursor-pointer">{{WRDS.ADD_TO_SHOPPING_CART}}</a>
+            <a (click)="goToProdDetails(product.id)" class="cursor-pointer">{{WRDS.WATCH_DETAILS}}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+   <div class="pagination">
+    <a class="page-link cursor-pointer" (click)="goToPreviousPage()">Anterior</a>
+    <a class="page-link cursor-pointer" (click)="goToNextPage(false, 0)" [class.active]="currentPage === 0">1</a>
+    <a class="page-link cursor-pointer" (click)="goToNextPage(false, 1)" [class.active]="currentPage === 1">2</a>
+    <a class="page-link cursor-pointer" (click)="goToNextPage(false, 2)" [class.active]="currentPage === 2">3</a>
+    <a class="page-link cursor-pointer" (click)="goToNextPage(false, 3)" [class.active]="currentPage === 3">4</a>
+    <a class="page-link cursor-pointer" [class.active]="currentPage >= 4">...</a>
+    <a class="page-link cursor-pointer" (click)="goToNextPage(true)">Siguiente</a>
+  </div>
+</section>

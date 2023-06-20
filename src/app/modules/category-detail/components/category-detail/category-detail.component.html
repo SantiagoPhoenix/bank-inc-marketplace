@@ -1,0 +1,24 @@
+<section id="marketplace-card">
+  <div class="container-card">
+    <div class="card" *ngFor="let product of marketPlace.products">
+      <div class="left-column bg-left-column">
+        <img src="{{product.images[0]}}" alt="Nombre Producto" class="product-image">
+      </div>
+      <div class="right-column">
+        <div>
+          <h4>{{WRDS.LOGO}}</h4>
+          <h6>{{WRDS.PRODUCT}}</h6>
+        </div>
+        <h2>{{product.title}}</h2>
+        <p class="ft-w-700 f-s-24 ft-l-h-20 cursor-pointer">${{product.price}}</p>
+        <div class="dropdown">
+          <button class="btn bg-left-1-column cursor-pointer">{{ WRDS.OPTIONS }}</button>
+          <div class="dropdown-content">
+            <a (click)="addProduct(product)" class="cursor-pointer">{{WRDS.ADD_TO_SHOPPING_CART}}</a>
+            <a (click)="goToProdDetails(product.id)" class="cursor-pointer">{{WRDS.WATCH_DETAILS}}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

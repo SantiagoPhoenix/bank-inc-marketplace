@@ -1,0 +1,42 @@
+<section id="shopping-table">
+  <div class="container">
+    <h2 class="ft-c-primary ft-w-700 ft-s-32 ft-l-h-29">{{ WRDS.PRODUCTS_IN_THE_CART }}</h2>
+    <div class="table-container">
+      <div class="table-wrapper">
+        <table class="table">
+          <thead>
+            <tr>
+              <th class="ft-c-primary ft-w-700 ft-s-20 ft-l-h-17">{{ WRDS.TITLE }}</th>
+              <th class="ft-c-primary ft-w-700 ft-s-20 ft-l-h-17">{{ WRDS.DESCRIPTION }}</th>
+              <th class="ft-c-primary ft-w-700 ft-s-20 ft-l-h-17">{{ WRDS.PRICE }}</th>
+              <th class="ft-c-primary ft-w-700 ft-s-20 ft-l-h-17">{{ WRDS.PRICE }}</th>
+              <th class="ft-c-primary ft-w-700 ft-s-20 ft-l-h-17">{{ WRDS.ACTIONS }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngIf="listProducts.length === 0">
+              <td [colSpan]="5" class="center ft-c-primary ft-w-400 ft-s-16 ft-l-h-17"></td>
+            </tr>
+            <ng-container *ngIf="listProducts.length > 0">
+              <tr *ngFor="let product of listProducts">
+                <td class="ft-c-primary ft-w-400 ft-s-16 ft-l-h-17">{{ product.title }}</td>
+                <td class="ft-c-primary ft-w-400 ft-s-16 ft-l-h-17">{{ product.description }}</td>
+                <td class="ft-c-primary ft-w-400 ft-s-16 ft-l-h-17">${{ product.price }}</td>
+                <td class="ft-c-primary ft-w-400 ft-s-16 ft-l-h-17">{{ product.amount }}</td>
+                <td>
+                  <button (click)="goToProdDetails(product.id)" class="btn btn-detail">{{ WRDS.WATCH_DETAILS }}</button>
+                  <button (click)="deleteOneProduct(product.id)" class="btn btn-delete">{{ WRDS.TO_DELETE_ONE_PRODUCT }}</button>
+                  <button (click)="deleteProduct(product.id)" class="btn btn-delete">{{ WRDS.TO_DELETE }}</button>
+                </td>
+              </tr>
+            </ng-container>
+          </tbody>
+        </table>
+      </div>
+      <button (click)="deleteAllProducts()" class="btn btn-empty cursor-pointer">{{ WRDS.EMPTY_CART }}</button>
+    </div>
+    <ng-container *ngIf="listProducts.length > 0">
+      <button (click)="getFile()" class="btn btn-empty cursor-pointer">{{ WRDS.DOWNLOAD_PRODUCTS }}</button>
+    </ng-container>
+  </div>
+</section>

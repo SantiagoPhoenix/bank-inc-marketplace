@@ -1,0 +1,11 @@
+<section id="carousel">
+  <div *ngIf="listImgs && listImgs.length > 0" class="carousel-container">
+    <ng-container *ngFor="let img of listImgs; let i = index">
+      <img [src]="img.images[intervalImg]" [alt]="img.title" class="fade" [ngClass]="{'img-active': selectedIndex === i}">
+      <h6 *ngIf="selectedIndex === i" class="carousel-caption">{{ img.title }}</h6>
+    </ng-container>
+  </div>
+  <div *ngIf="buttons" class="carousel-btn-container">
+    <span *ngFor="let btn of listImgs; let i = index" class="btn cursor-pointer" [ngClass]="{'active': selectedIndex === i}" (click)="selectImg(i)"></span>
+  </div>
+</section>

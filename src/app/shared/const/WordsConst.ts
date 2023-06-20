@@ -1,0 +1,20 @@
+export const WORDS_CONST = {
+  LOGO: 'BIM',
+  MENU_START: 'Inicio',
+  BANK_INC_MARKETPLACE: 'BANK INC MARKETPLACE',
+  PRODUCT_NAME: 'Nombre Producto',
+  PRODUCT: 'Producto',
+  ADD_TO_SHOPPING_CART: 'Agregar al carrito',
+  WATCH_DETAILS: 'Ver detalle',
+  TO_DELETE_ONE_PRODUCT: 'Eliminar un producto',
+  TO_DELETE: 'Eliminar',
+  EMPTY_CART: 'Vaciar carrito',
+  PRODUCTS_IN_THE_CART: 'Productos en el Carrito',
+  TITLE: 'Título',
+  DESCRIPTION: 'Descripción',
+  PRICE: 'Precio',
+  AMOUNT: 'Cantidad',
+  ACTIONS: 'Acciones',
+  OPTIONS: 'Opciones',
+  DOWNLOAD_PRODUCTS: 'Descargar Productos'
+}
